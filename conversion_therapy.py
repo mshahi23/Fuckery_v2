@@ -3,7 +3,7 @@ from moviepy.editor import *
 import os
 import ffmpeg
 
-link = "https://www.youtube.com/playlist?list=PLzLzth2xZz6myQArGMowRU3c3SiU4US8S"
+link = "https://www.youtube.com/playlist?list=PL1t2499m7R04t1FknkaI6G7STUF3FI3bt"
 p = Playlist(link)
 bad_chars = ['/', "\\", ':', '*', '?', '"', '<', '>', '|', "'", "."]
 # Output type
