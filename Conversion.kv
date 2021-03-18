@@ -1,0 +1,94 @@
+<Button>
+    font_size:16
+
+<UI>
+    FloatLayout:
+        BoxLayout:
+            orientation: "vertical"
+            size : root.width, root.height
+            GridLayout:
+                cols: 1
+                Label:
+                    id:title1
+                    text: 'Playlist Link'
+                    size_hint: 0.1, 0.1
+                    background_color: (0, 1, 0, 1)
+                TextInput:
+                    id:urlInput
+                    hint_text: 'Insert URL here'
+                    size_hint: 0.1, 0.2
+            GridLayout:
+                cols:1
+                Label:
+                    id:title2
+                    text: 'File Type'
+                    size_hint: 1, None
+            GridLayout:
+                cols: 2
+                Label:
+                    id:mp3Label
+                    text: 'MP3'
+                    size_hint: 0.1, 0.3
+                CheckBox:
+                    group:'filetype'
+                    id:mp3Box
+                    size_hint: 0.1, 0.3
+                Label:
+                    id:mp4Label
+                    text: 'MP4'
+                    size_hint: 0.1, 0.3
+                CheckBox:
+                    group:'filetype'
+                    id:mp4Box
+                    size_hint: 0.1, 0.3
+                Label:
+                    id:gifLabel
+                    text: 'GIF'
+                    size_hint: 0.1, 0.3
+                CheckBox:
+                    group:'filetype'
+                    id:gifBox
+                    size_hint: 0.1, 0.3
+            GridLayout:
+                cols:1
+                Label:
+                    id:title3
+                    text: 'Quality'
+                    size_hint: 0.1, 0.1
+            GridLayout:
+                cols: 2
+                Label:
+                    id:highqLabel
+                    text: 'High Quality'
+                    size_hint: 0.1, 0.1
+                CheckBox:
+                    group:'quality'
+                    id:highqBox
+                    size_hint: 0.1, 0.2
+                Label:
+                    id:lowqLabel
+                    text: 'Low Quality'
+                    size_hint: 0.1, 0.1
+                CheckBox:
+                    group:'quality'
+                    id:lowqBox
+                    size_hint: 0.1, 0.2
+            GridLayout:
+                cols: 1
+                Button:
+                    id: button
+                    text: 'Submit'
+                    size_hint: 0.05, 0.05
+                    background_color: (1, 0, 0 ,1)
+                    on_release: root.submit()
+            GridLayout:
+                cols: 1
+                ScrollView:
+                    size_hint_y: 50
+                    Label:
+                        id: output
+                        size_hint_y: 20
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+
+
