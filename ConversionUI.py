@@ -5,6 +5,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.popup import Popup
 from kivy.uix.button import Button
 from kivy.uix.label import Label
+from conversion_therapy import intro
 
 
 def error(flag):
@@ -24,8 +25,22 @@ def error(flag):
 
 
 class UI(FloatLayout):
-    def process_input(self):
-        self.ids['output'].text = "User does not exist"
+    def submit(self):
+        url = self.ids['urlInput'].text
+        print(url)
+        if self.ids['mp3Box'].active:
+            filetype = "mp3"
+        elif self.ids['mp4Box'].active:
+            filetype = "mp4"
+        else:
+            filetype = "gif"
+        if self.ids['highqBox'].active:
+            quality = "y"
+        else:
+            quality = "n"
+        print(filetype)
+        print(quality)
+        intro(url, filetype, quality)
 
 
 class ConversionApp(App):
